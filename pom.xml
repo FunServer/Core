@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>me.camdenorrb</groupId>
+    <artifactId>FunServer-Core</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+
+    <parent>
+        <groupId>me.camdenorrb</groupId>
+        <artifactId>PluginsMaven</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+
+    <dependencies>
+
+        <!-- Kotlin Java 8 -->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jre8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+
+        <!-- MiniBus -->
+        <dependency>
+            <groupId>me.camdenorrb</groupId>
+            <artifactId>MiniBus</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
