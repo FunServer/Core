@@ -10,6 +10,6 @@ enum class FunRank {
 	Default;
 
 	val level: Int
-		inline get() = ordinal
+		get() = ordinal
 
 }

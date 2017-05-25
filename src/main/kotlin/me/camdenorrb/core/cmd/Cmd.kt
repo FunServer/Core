@@ -1,8 +1,8 @@
 package me.camdenorrb.core.cmd
 
 import me.camdenorrb.core.account.Account
+import me.camdenorrb.core.extensions.server
 import me.camdenorrb.core.rank.FunRank
-import org.bukkit.Bukkit
 import org.bukkit.command.CommandSender
 
 /**
@@ -33,7 +33,7 @@ abstract class Cmd(val aliases: Array<String>, val ranks: Array<FunRank> = array
 	abstract fun execute(sender: CommandSender, account: Account?, args: MutableList<String>): Boolean
 
 	open fun onTab(sender: CommandSender, args: MutableList<String>): List<String> {
-		return Bukkit.getOnlinePlayers().map { it.name }
+		return server.onlinePlayers.map { it.name }
 	}
 
 }

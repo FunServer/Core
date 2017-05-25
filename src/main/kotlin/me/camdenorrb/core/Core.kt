@@ -8,10 +8,18 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class Core : JavaPlugin() {
 
-	override fun onLoad() = Unit
+	override fun onLoad() { instance = this }
 
 	override fun onEnable() = Unit
 
 	override fun onDisable() = Unit
+
+
+	companion object {
+
+		lateinit var instance: Core
+			private set
+
+	}
 
 }
