@@ -11,14 +11,12 @@ import org.bukkit.command.CommandSender
 
 abstract class Cmd(val aliases: Array<String>, val ranks: Array<FunRank> = arrayOf(FunRank.Default), var usage: String = "", var minArgs: Int = 0) {
 
-	abstract val name: String
-
 	open val mainCmd = aliases.firstOrNull() ?: ""
 
 
 	init {
-		check(ranks.isNotEmpty(), { "The cmd $name has no ranks to figure out who can execute the cmd." })
-		check(aliases.isNotEmpty()) { "The cmd $name has no aliases to signify when to execute." }
+		check(ranks.isNotEmpty(), { "The cmd $mainCmd has no ranks to figure out who can execute the cmd." })
+		check(aliases.isNotEmpty()) { "The cmd $mainCmd has no aliases to signify when to execute." }
 	}
 
 

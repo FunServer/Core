@@ -10,8 +10,6 @@ import org.bukkit.command.CommandSender
 
 class TestCmd : Cmd(arrayOf("test"), usage = "/Test", minArgs = 2) {
 
-	override val name = "Test"
-
 	override fun execute(sender: CommandSender, account: Account?, args: MutableList<String>): Boolean {
 		sender.sendMessage("${args.joinToString(" ")} ${args.size}")
 		return true

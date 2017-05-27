@@ -1,5 +1,10 @@
 package me.camdenorrb.core
 
+import com.google.gson.GsonBuilder
+import me.camdenorrb.core.aliases.Accounts
+import me.camdenorrb.core.aliases.Commands
+import me.camdenorrb.core.cmd.cmds.TestCmd
+import me.camdenorrb.minibus.MiniBus
 import org.bukkit.plugin.java.JavaPlugin
 
 /**
@@ -8,11 +13,28 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class Core : JavaPlugin() {
 
-	override fun onLoad() { instance = this }
+	val miniBus = MiniBus()
 
-	override fun onEnable() = Unit
+	val commands: Commands = mutableSetOf()
+	val accounts: Accounts = mutableMapOf()
 
-	override fun onDisable() = Unit
+	val gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
+
+
+	override fun onLoad() {
+		instance = this
+	}
+
+	override fun onEnable() {
+		commands.add(TestCmd())
+	}
+
+
+	override fun onDisable() {
+		commands.clear()
+		accounts.clear()
+		miniBus.cleanUp()
+	}
 
 
 	companion object {

@@ -3,16 +3,15 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.camdenorrb</groupId>
     <artifactId>FunServer-Core</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
 
     <parent>
         <groupId>me.camdenorrb</groupId>
         <artifactId>PluginsMaven</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
     </parent>
 
 
