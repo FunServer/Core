@@ -4,7 +4,9 @@ import com.google.gson.GsonBuilder
 import me.camdenorrb.core.aliases.Accounts
 import me.camdenorrb.core.aliases.Commands
 import me.camdenorrb.core.cmd.cmds.TestCmd
+import me.camdenorrb.core.gson.LocationAdapter
 import me.camdenorrb.minibus.MiniBus
+import org.bukkit.Location
 import org.bukkit.plugin.java.JavaPlugin
 
 /**
@@ -18,7 +20,7 @@ class Core : JavaPlugin() {
 	val commands: Commands = mutableSetOf()
 	val accounts: Accounts = mutableMapOf()
 
-	val gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
+	val gson = GsonBuilder().setPrettyPrinting().registerTypeAdapter(Location::class.java, LocationAdapter()).create()!!
 
 
 	override fun onLoad() {
